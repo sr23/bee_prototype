@@ -11,30 +11,33 @@
 
 @implementation BeeViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
-    // Create and configure the scene.
-    SKScene * scene = [BeeMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
+    if (!skView.scene) {
+        skView.showsFPS = YES;
+        skView.showsNodeCount = YES;
+
+        // Create and configure the scene.
+        SKScene * scene = [[BeeMyScene alloc] initWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+
+        // Present the scene.
+        [skView presentScene:scene];
+    }
 }
 
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate {
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
-{
+- (NSUInteger)supportedInterfaceOrientations {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return UIInterfaceOrientationMaskAllButUpsideDown;
     } else {
@@ -42,8 +45,7 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }

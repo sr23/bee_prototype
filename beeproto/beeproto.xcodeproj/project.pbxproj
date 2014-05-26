@@ -23,6 +23,10 @@
 		EFBBFFC01933568E001CCF65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBBFF9B1933568D001CCF65 /* UIKit.framework */; };
 		EFBBFFC81933568E001CCF65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFC61933568E001CCF65 /* InfoPlist.strings */; };
 		EFBBFFCA1933568E001CCF65 /* beeprotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBBFFC91933568E001CCF65 /* beeprotoTests.m */; };
+		EFBBFFDC19335F67001CCF65 /* bee1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFD919335F67001CCF65 /* bee1.gif */; };
+		EFBBFFDD19335F67001CCF65 /* bee2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFDA19335F67001CCF65 /* bee2.gif */; };
+		EFBBFFE119336CE4001CCF65 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFDF19336CE4001CCF65 /* Ground.png */; };
+		EFBBFFE219336CE4001CCF65 /* Skyline.png in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFE019336CE4001CCF65 /* Skyline.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		EFBBFFC51933568E001CCF65 /* beeprotoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "beeprotoTests-Info.plist"; sourceTree = "<group>"; };
 		EFBBFFC71933568E001CCF65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EFBBFFC91933568E001CCF65 /* beeprotoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beeprotoTests.m; sourceTree = "<group>"; };
+		EFBBFFD919335F67001CCF65 /* bee1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bee1.gif; sourceTree = "<group>"; };
+		EFBBFFDA19335F67001CCF65 /* bee2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bee2.gif; sourceTree = "<group>"; };
+		EFBBFFDF19336CE4001CCF65 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
+		EFBBFFE019336CE4001CCF65 /* Skyline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skyline.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,10 @@
 		EFBBFF8B1933568D001CCF65 = {
 			isa = PBXGroup;
 			children = (
+				EFBBFFDF19336CE4001CCF65 /* Ground.png */,
+				EFBBFFE019336CE4001CCF65 /* Skyline.png */,
+				EFBBFFD919335F67001CCF65 /* bee1.gif */,
+				EFBBFFDA19335F67001CCF65 /* bee2.gif */,
 				EFBBFF9F1933568D001CCF65 /* beeproto */,
 				EFBBFFC31933568E001CCF65 /* beeprotoTests */,
 				EFBBFF961933568D001CCF65 /* Frameworks */,
@@ -239,8 +251,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFBBFFA41933568E001CCF65 /* InfoPlist.strings in Resources */,
+				EFBBFFDC19335F67001CCF65 /* bee1.gif in Resources */,
+				EFBBFFDD19335F67001CCF65 /* bee2.gif in Resources */,
 				EFBBFFB71933568E001CCF65 /* Images.xcassets in Resources */,
+				EFBBFFE219336CE4001CCF65 /* Skyline.png in Resources */,
 				EFBBFFAD1933568E001CCF65 /* Main.storyboard in Resources */,
+				EFBBFFE119336CE4001CCF65 /* Ground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +408,7 @@
 				INFOPLIST_FILE = "beeproto/beeproto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,6 +423,7 @@
 				INFOPLIST_FILE = "beeproto/beeproto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
