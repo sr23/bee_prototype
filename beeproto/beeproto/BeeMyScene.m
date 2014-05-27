@@ -89,7 +89,6 @@ static const uint32_t enemyCategory = 1 << 3;
     SKAction* flyAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[beeTexture1, beeTexture2] timePerFrame:0.05]];
 
     _bee = [SKSpriteNode spriteNodeWithTexture:beeTexture1];
-    [_bee setScale:0.2];
     [_bee runAction:flyAnimation];
 
     _bee.position = CGPointMake(self.frame.size.width / 6, CGRectGetMidY(self.frame));
@@ -215,9 +214,21 @@ static const uint32_t enemyCategory = 1 << 3;
 }
 
 -(void)spawnPollen {
-    CGFloat randomPos = arc4random() % (NSInteger)(self.frame.size.height);
+    CGFloat randomPos = arc4random() % ((NSInteger)(self.frame.size.height) - 15 - 111 + 1) + 111;
 
-    SKSpriteNode* pollen = [SKSpriteNode spriteNodeWithColor:[SKColor yellowColor] size:CGSizeMake(10, 10)];
+    SKTexture* texture1 = [SKTexture textureWithImageNamed:@"coin1"];
+    SKTexture* texture2 = [SKTexture textureWithImageNamed:@"coin2"];
+    SKTexture* texture3 = [SKTexture textureWithImageNamed:@"coin3"];
+    SKTexture* texture4 = [SKTexture textureWithImageNamed:@"coin4"];
+    SKTexture* texture5 = [SKTexture textureWithImageNamed:@"coin5"];
+    SKTexture* texture6 = [SKTexture textureWithImageNamed:@"coin6"];
+    SKTexture* texture7 = [SKTexture textureWithImageNamed:@"coin7"];
+    SKTexture* texture8 = [SKTexture textureWithImageNamed:@"coin8"];
+
+    SKAction* coinAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[texture1, texture2, texture3, texture4, texture5, texture6, texture7, texture8] timePerFrame:0.05]];
+
+    SKSpriteNode* pollen = [SKSpriteNode spriteNodeWithTexture:texture1];
+    [pollen runAction:coinAnimation];
     pollen.position = CGPointMake(self.frame.size.width + 20, randomPos);
     pollen.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pollen.size];
     pollen.physicsBody.dynamic = NO;
@@ -229,7 +240,7 @@ static const uint32_t enemyCategory = 1 << 3;
 }
 
 -(void)spawnEnemy {
-    CGFloat randomPos = arc4random() % (NSInteger)(self.frame.size.height);
+    CGFloat randomPos = arc4random() % ((NSInteger)(self.frame.size.height) - 15 - 111 + 1) + 111;
 
     SKSpriteNode* enemy = [SKSpriteNode spriteNodeWithColor:[SKColor redColor] size:CGSizeMake(15, 15)];
     enemy.position = CGPointMake(self.frame.size.width + 30, randomPos);
@@ -267,7 +278,7 @@ static const uint32_t enemyCategory = 1 << 3;
         SKSpriteNode* node = (SKSpriteNode *) secondBody.node;
         node.physicsBody = nil; //To prevent duplicate collisions
 
-        [node runAction:[SKAction sequence:@[[SKAction scaleBy:3.0 duration:0.2], [SKAction fadeAlphaTo:0.0 duration:0.1], [SKAction removeFromParent]]]];
+        [node runAction:[SKAction sequence:@[[SKAction scaleBy:2.0 duration:0.2], [SKAction fadeAlphaTo:0.0 duration:0.1], [SKAction removeFromParent]]]];
     }
 }
 
