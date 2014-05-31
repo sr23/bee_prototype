@@ -16,10 +16,10 @@
     BOOL _beeShouldFly;
 
     SKLabelNode* _scoreLabelNode;
-    NSInteger _score;
+    int _score;
 
     SKLabelNode* _healthLabelNode;
-    NSInteger _health;
+    int _health;
 
     SKAction* _movePollenAndRemove;
     SKAction* _moveEnemyAndRemove;
@@ -92,6 +92,7 @@ static const uint32_t enemyCategory = 1 << 3;
     [_bee runAction:flyAnimation];
 
     _bee.position = CGPointMake(self.frame.size.width / 6, CGRectGetMidY(self.frame));
+    _bee.scale = 0.5;
     _bee.zPosition = 100;
     _bee.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_bee.size.height / 2];
     _bee.physicsBody.dynamic = YES;
@@ -100,6 +101,10 @@ static const uint32_t enemyCategory = 1 << 3;
     _bee.physicsBody.categoryBitMask = beeCategory;
     _bee.physicsBody.collisionBitMask = worldCategory;
     _bee.physicsBody.contactTestBitMask = pollenCategory | enemyCategory;
+}
+
+-(void)createSwarm {
+    
 }
 
 -(void)setupParallax {

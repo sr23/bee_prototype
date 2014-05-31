@@ -22,6 +22,9 @@
  *      * Different flying patterns - Arrow shape, line shapes (secret easter egg shapes (SR23))
  *  * Enemies: wasps/hornets, pollution clouds, pesticides, something else
  *    * Hive enemies - mites/beetles
+ *    * Pollution clouds just float across the screen at foreground speed (and bob up and down slightly)
+ *    * Wasps appear at the right hand screen for a moment, then kamikaze to position of swarm at start of movement in a straight line - this gives player time to move out of the way/fire a bee at the wasp to "fight" it off
+      * Swarm can fire a bee?
  *  * Levels will have fixed length so that it is possible to reach the end and "return to base"
  */
 

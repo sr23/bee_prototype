@@ -7,7 +7,7 @@
 //
 
 #import "BeeViewController.h"
-#import "BeeMyScene.h"
+#import "BeeMenuScene.h"
 
 @implementation BeeViewController
 
@@ -25,7 +25,7 @@
         skView.showsNodeCount = YES;
 
         // Create and configure the scene.
-        SKScene * scene = [[BeeMyScene alloc] initWithSize:skView.bounds.size];
+        SKScene * scene = [[BeeMenuScene alloc] initWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
 
         // Present the scene.
