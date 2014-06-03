@@ -10,6 +10,7 @@
 
 @interface BeeMyScene () <SKPhysicsContactDelegate> {
     SKSpriteNode* _bee;
+    SKSpriteNode* _swarm;
     SKNode* _moving;
 
     float _beeVelocity;
@@ -30,6 +31,7 @@ static const uint32_t beeCategory = 1 << 0;
 static const uint32_t pollenCategory = 1 << 1;
 static const uint32_t worldCategory = 1 << 2;
 static const uint32_t enemyCategory = 1 << 3;
+static const uint32_t swarmCategory = 1 << 4;
 
 @implementation BeeMyScene
 
@@ -42,6 +44,8 @@ static const uint32_t enemyCategory = 1 << 3;
 
         [self createBee];
         [self addChild:_bee];
+
+//        [self createSwarm];
 
         [self setupParallax];
 
@@ -58,7 +62,7 @@ static const uint32_t enemyCategory = 1 << 3;
 }
 
 -(void)setupSceneAttributes {
-    self.physicsWorld.gravity = CGVectorMake(0.0, -2.5);
+    self.physicsWorld.gravity = CGVectorMake(0.0, -9.8);
     self.physicsWorld.contactDelegate = self;
 
     self.backgroundColor = [SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.0 alpha:1.0];
@@ -104,7 +108,50 @@ static const uint32_t enemyCategory = 1 << 3;
 }
 
 -(void)createSwarm {
+    float xPos = self.frame.size.width / 6;
+    float yPos = CGRectGetMidY(self.frame);
+
+    SKTexture* beeTexture1 = [SKTexture textureWithImageNamed:@"bee1"];
+    SKTexture* beeTexture2 = [SKTexture textureWithImageNamed:@"bee2"];
+    SKAction* flyAnimation = [SKAction repeatActionForever:[SKAction animateWithTextures:@[beeTexture1, beeTexture2] timePerFrame:0.05]];
+
+    float beeWidth = beeTexture1.size.width * 0.3f;
+    float beeHeight = beeTexture1.size.height * 0.3f;
+
+    _swarm = [SKSpriteNode node];
+    [self addChild:_swarm];
+    _swarm.position = CGPointMake(xPos, yPos);
+    _swarm.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:beeWidth * 2.2];
+    _swarm.physicsBody.dynamic = YES;
+    _swarm.physicsBody.allowsRotation = NO;
+    _swarm.physicsBody.restitution = 0.0;
+    _swarm.physicsBody.categoryBitMask = swarmCategory;
+    _swarm.physicsBody.collisionBitMask = worldCategory;
+
+    [_swarm addChild:[self createSwarmBeeWithPosition:CGPointMake(0.0, 0.0) andAnimation:flyAnimation andTexture:beeTexture1]];
+    [_swarm addChild:[self createSwarmBeeWithPosition:CGPointMake(1.5 * beeWidth, 0.0) andAnimation:flyAnimation andTexture:beeTexture1]];
+    [_swarm addChild:[self createSwarmBeeWithPosition:CGPointMake(-1.5 * beeWidth, 0.0) andAnimation:flyAnimation andTexture:beeTexture1]];
+    [_swarm addChild:[self createSwarmBeeWithPosition:CGPointMake(0.0, 1.5 * beeHeight) andAnimation:flyAnimation andTexture:beeTexture1]];
+    [_swarm addChild:[self createSwarmBeeWithPosition:CGPointMake(0.0, -1.5 * beeHeight) andAnimation:flyAnimation andTexture:beeTexture1]];
+
     
+}
+
+-(SKSpriteNode *)createSwarmBeeWithPosition:(CGPoint)position andAnimation:(SKAction*)animation andTexture:(SKTexture*)texture {
+    SKSpriteNode* bee1 = [SKSpriteNode spriteNodeWithTexture:texture];
+    [bee1 runAction:animation];
+    bee1.position = position;
+    bee1.scale = 0.3;
+    bee1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:bee1.size.height / 2];
+    bee1.physicsBody.dynamic = YES;
+    bee1.physicsBody.allowsRotation = NO;
+    bee1.physicsBody.affectedByGravity = NO;
+    bee1.physicsBody.restitution = 0.0;
+    bee1.physicsBody.categoryBitMask = beeCategory;
+    bee1.physicsBody.collisionBitMask = worldCategory;
+    bee1.physicsBody.contactTestBitMask = pollenCategory | enemyCategory;
+
+    return bee1;
 }
 
 -(void)setupParallax {
@@ -184,11 +231,19 @@ static const uint32_t enemyCategory = 1 << 3;
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     if (_beeShouldFly) {
+//        [_swarm runAction:[SKAction moveByX:0.0 y:1.0 duration:0.1]];
+        //[_swarm.physicsBody applyImpulse:CGVectorMake(0, _beeVelocity)];
+//        for (SKNode* bee in _swarm.children) {
+//            [bee.physicsBody applyImpulse:CGVectorMake(0, _beeVelocity)];
+//        }
         [_bee.physicsBody applyImpulse:CGVectorMake(0, _beeVelocity)];
         _beeVelocity += 0.005f;
         if (_beeVelocity > 1.5f) {
             _beeVelocity = 1.5f;
         }
+//        if (_beeVelocity < 10.0f) {
+//            _beeVelocity += 1.01f;
+//        }
     }
 }
 
@@ -283,7 +338,7 @@ static const uint32_t enemyCategory = 1 << 3;
         SKSpriteNode* node = (SKSpriteNode *) secondBody.node;
         node.physicsBody = nil; //To prevent duplicate collisions
 
-        [node runAction:[SKAction sequence:@[[SKAction scaleBy:2.0 duration:0.2], [SKAction fadeAlphaTo:0.0 duration:0.1], [SKAction removeFromParent]]]];
+        [node runAction:[SKAction sequence:@[[SKAction scaleBy:1.5 duration:0.1], [SKAction fadeAlphaTo:0.0 duration:0.1], [SKAction removeFromParent]]]];
     }
 }
 

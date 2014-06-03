@@ -8,6 +8,7 @@
 
 #import "BeeViewController.h"
 #import "BeeMenuScene.h"
+#import "BeeScratchScene.h"
 
 @implementation BeeViewController
 
@@ -23,6 +24,7 @@
     if (!skView.scene) {
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
+        skView.showsPhysics = YES;
 
         // Create and configure the scene.
         SKScene * scene = [[BeeMenuScene alloc] initWithSize:skView.bounds.size];
