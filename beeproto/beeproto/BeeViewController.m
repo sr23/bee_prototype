@@ -27,7 +27,7 @@
         skView.showsPhysics = YES;
 
         // Create and configure the scene.
-        SKScene * scene = [[BeeMenuScene alloc] initWithSize:skView.bounds.size];
+        SKScene * scene = [[BeeScratchScene alloc] initWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
 
         // Present the scene.

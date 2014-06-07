@@ -7,6 +7,7 @@
 //
 
 #import "BeeScratchScene.h"
+#import "BeeBoid.h"
 
 @interface BeeScratchScene () <SKPhysicsContactDelegate> {
     float _containerVelocity;
@@ -17,9 +18,8 @@
 
 @implementation BeeScratchScene
 
-static const uint32_t childCategory = 1 << 0;
-static const uint32_t containerCategory = 1 << 1;
-static const uint32_t worldCategory = 1 << 2;
+static const uint32_t containerCategory = 1 << 0;
+static const uint32_t worldCategory = 1 << 1;
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -39,24 +39,18 @@ static const uint32_t worldCategory = 1 << 2;
         _container.physicsBody.categoryBitMask = containerCategory;
         _container.physicsBody.collisionBitMask = worldCategory;
 
-        SKSpriteNode* child1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(5.0, 5.0)];
-        child1.position = CGPointMake(5.0, 0.0);
-        child1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:2.5];
-        child1.physicsBody.dynamic = NO;
-        child1.physicsBody.categoryBitMask = childCategory;
-        [_container addChild:child1];
-
-        SKSpriteNode* child2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(5.0, 5.0)];
-        child2.position = CGPointMake(-5.0, 0.0);
-        child2.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:2.5];
-        child2.physicsBody.dynamic = NO;
-        child2.physicsBody.categoryBitMask = childCategory;
-        [_container addChild:child2];
-
-
-        [_container runAction:[SKAction moveByX:self.frame.size.width y:0.0 duration:120.0]];
+        [self initBoidsWithStartX:xPos AndStartY:yPos];
     }
     return self;
+}
+
+-(void)initBoidsWithStartX:(float)xpos AndStartY:(float)ypos {
+    for (int i = 0; i < 6; i++) {
+        BeeBoid* beeBoid = [BeeBoid spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(5.0, 5.0)];
+        beeBoid.position = CGPointMake(xpos, ypos);
+        beeBoid.name = @"beeBoid";
+        [self addChild:beeBoid];
+    }
 }
 
 -(void)setupSceneAttributes {
@@ -85,8 +79,6 @@ static const uint32_t worldCategory = 1 << 2;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     _containerVelocity = 1.0f;
     _shouldFly = YES;
-
-
 }
 
 -(void)cancelFly {
@@ -109,13 +101,31 @@ static const uint32_t worldCategory = 1 << 2;
             _containerVelocity += 0.05f;
         }
     }
+
 }
 
 -(void)didSimulatePhysics {
-//    SKNode* container = [self childNodeWithName:@"container"];
-//    SKNode* child = [container.children objectAtIndex:0];
-//    child.position = CGPointMake(0.0, 0.0);
+    [self moveAllBoidsToNewPositions];
 }
 
+-(void)moveAllBoidsToNewPositions {
+    NSMutableArray* boids = [[NSMutableArray alloc] init];
+    [self enumerateChildNodesWithName:@"beeBoid" usingBlock:^(SKNode* node, BOOL* stop) {
+        NSLog(@"Updating boid position");
+        [boids addObject:(BeeBoid*)node];
+    }];
+
+    CGVector v1, v2, v3, bv; //v1 = move to position of container physics body, v2 = keep away from other boids, v3 = match velocity with other boids
+    CGPoint containerPos = [self childNodeWithName:@"container"].position;
+    for (int i = 0; i < [boids count]; i++) {
+        BeeBoid* boid = boids[i];
+        bv = [boid getVelocity];
+
+        v1 = CGVectorMake((containerPos.x - boid.position.x) / 100, (containerPos.y - boid.position.y) / 100);
+
+        [boid setVelocity:CGVectorMake(bv.dx + v1.dx + v2.dx + v3.dx, bv.dy + v1.dy + v2.dy + v3.dy)];
+        boid.position = CGPointMake(boid.position.x + [boid getVelocity].dx, boid.position.y + [boid getVelocity].dy);
+    }
+}
 
 @end

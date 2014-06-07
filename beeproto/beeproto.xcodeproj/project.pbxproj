@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA297B041937F05E008EB5B0 /* bee1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297AFA1937F05D008EB5B0 /* bee1.png */; };
+		DA297B051937F05E008EB5B0 /* bee2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297AFB1937F05D008EB5B0 /* bee2.png */; };
+		DA297B061937F05E008EB5B0 /* coin1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297AFC1937F05D008EB5B0 /* coin1.png */; };
+		DA297B071937F05E008EB5B0 /* coin2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297AFD1937F05D008EB5B0 /* coin2.png */; };
+		DA297B081937F05E008EB5B0 /* coin3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297AFE1937F05E008EB5B0 /* coin3.png */; };
+		DA297B091937F05E008EB5B0 /* coin4.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297AFF1937F05E008EB5B0 /* coin4.png */; };
+		DA297B0A1937F05E008EB5B0 /* coin5.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297B001937F05E008EB5B0 /* coin5.png */; };
+		DA297B0B1937F05E008EB5B0 /* coin6.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297B011937F05E008EB5B0 /* coin6.png */; };
+		DA297B0C1937F05E008EB5B0 /* coin7.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297B021937F05E008EB5B0 /* coin7.png */; };
+		DA297B0D1937F05E008EB5B0 /* coin8.png in Resources */ = {isa = PBXBuildFile; fileRef = DA297B031937F05E008EB5B0 /* coin8.png */; };
+		DAA547BB193A8D6300F743AD /* BeeMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA547BA193A8D6300F743AD /* BeeMenuScene.m */; };
+		DAA547BE193B7A5700F743AD /* BeeScratchScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA547BD193B7A5700F743AD /* BeeScratchScene.m */; };
+		DAFB9B4619438EDA00E06E8D /* BeeBoid.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFB9B4519438EDA00E06E8D /* BeeBoid.m */; };
 		EFBBFF981933568D001CCF65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBBFF971933568D001CCF65 /* Foundation.framework */; };
 		EFBBFF9A1933568D001CCF65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBBFF991933568D001CCF65 /* CoreGraphics.framework */; };
 		EFBBFF9C1933568D001CCF65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBBFF9B1933568D001CCF65 /* UIKit.framework */; };
@@ -23,8 +36,6 @@
 		EFBBFFC01933568E001CCF65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBBFF9B1933568D001CCF65 /* UIKit.framework */; };
 		EFBBFFC81933568E001CCF65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFC61933568E001CCF65 /* InfoPlist.strings */; };
 		EFBBFFCA1933568E001CCF65 /* beeprotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBBFFC91933568E001CCF65 /* beeprotoTests.m */; };
-		EFBBFFDC19335F67001CCF65 /* bee1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFD919335F67001CCF65 /* bee1.gif */; };
-		EFBBFFDD19335F67001CCF65 /* bee2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFDA19335F67001CCF65 /* bee2.gif */; };
 		EFBBFFE119336CE4001CCF65 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFDF19336CE4001CCF65 /* Ground.png */; };
 		EFBBFFE219336CE4001CCF65 /* Skyline.png in Resources */ = {isa = PBXBuildFile; fileRef = EFBBFFE019336CE4001CCF65 /* Skyline.png */; };
 /* End PBXBuildFile section */
@@ -40,6 +51,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA297AFA1937F05D008EB5B0 /* bee1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee1.png; sourceTree = "<group>"; };
+		DA297AFB1937F05D008EB5B0 /* bee2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee2.png; sourceTree = "<group>"; };
+		DA297AFC1937F05D008EB5B0 /* coin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin1.png; sourceTree = "<group>"; };
+		DA297AFD1937F05D008EB5B0 /* coin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin2.png; sourceTree = "<group>"; };
+		DA297AFE1937F05E008EB5B0 /* coin3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin3.png; sourceTree = "<group>"; };
+		DA297AFF1937F05E008EB5B0 /* coin4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin4.png; sourceTree = "<group>"; };
+		DA297B001937F05E008EB5B0 /* coin5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin5.png; sourceTree = "<group>"; };
+		DA297B011937F05E008EB5B0 /* coin6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin6.png; sourceTree = "<group>"; };
+		DA297B021937F05E008EB5B0 /* coin7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin7.png; sourceTree = "<group>"; };
+		DA297B031937F05E008EB5B0 /* coin8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin8.png; sourceTree = "<group>"; };
+		DAA547B9193A8D6300F743AD /* BeeMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeMenuScene.h; sourceTree = "<group>"; };
+		DAA547BA193A8D6300F743AD /* BeeMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeMenuScene.m; sourceTree = "<group>"; };
+		DAA547BC193B7A5700F743AD /* BeeScratchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeScratchScene.h; sourceTree = "<group>"; };
+		DAA547BD193B7A5700F743AD /* BeeScratchScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeScratchScene.m; sourceTree = "<group>"; };
+		DAFB9B4419438EDA00E06E8D /* BeeBoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeBoid.h; sourceTree = "<group>"; };
+		DAFB9B4519438EDA00E06E8D /* BeeBoid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeBoid.m; sourceTree = "<group>"; };
 		EFBBFF941933568D001CCF65 /* beeproto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beeproto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBBFF971933568D001CCF65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EFBBFF991933568D001CCF65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,8 +89,6 @@
 		EFBBFFC51933568E001CCF65 /* beeprotoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "beeprotoTests-Info.plist"; sourceTree = "<group>"; };
 		EFBBFFC71933568E001CCF65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EFBBFFC91933568E001CCF65 /* beeprotoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beeprotoTests.m; sourceTree = "<group>"; };
-		EFBBFFD919335F67001CCF65 /* bee1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bee1.gif; sourceTree = "<group>"; };
-		EFBBFFDA19335F67001CCF65 /* bee2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bee2.gif; sourceTree = "<group>"; };
 		EFBBFFDF19336CE4001CCF65 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
 		EFBBFFE019336CE4001CCF65 /* Skyline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skyline.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,10 +121,18 @@
 		EFBBFF8B1933568D001CCF65 = {
 			isa = PBXGroup;
 			children = (
+				DA297AFA1937F05D008EB5B0 /* bee1.png */,
+				DA297AFB1937F05D008EB5B0 /* bee2.png */,
+				DA297AFC1937F05D008EB5B0 /* coin1.png */,
+				DA297AFD1937F05D008EB5B0 /* coin2.png */,
+				DA297AFE1937F05E008EB5B0 /* coin3.png */,
+				DA297AFF1937F05E008EB5B0 /* coin4.png */,
+				DA297B001937F05E008EB5B0 /* coin5.png */,
+				DA297B011937F05E008EB5B0 /* coin6.png */,
+				DA297B021937F05E008EB5B0 /* coin7.png */,
+				DA297B031937F05E008EB5B0 /* coin8.png */,
 				EFBBFFDF19336CE4001CCF65 /* Ground.png */,
 				EFBBFFE019336CE4001CCF65 /* Skyline.png */,
-				EFBBFFD919335F67001CCF65 /* bee1.gif */,
-				EFBBFFDA19335F67001CCF65 /* bee2.gif */,
 				EFBBFF9F1933568D001CCF65 /* beeproto */,
 				EFBBFFC31933568E001CCF65 /* beeprotoTests */,
 				EFBBFF961933568D001CCF65 /* Frameworks */,
@@ -140,6 +173,12 @@
 				EFBBFFB21933568E001CCF65 /* BeeMyScene.m */,
 				EFBBFFB61933568E001CCF65 /* Images.xcassets */,
 				EFBBFFA01933568D001CCF65 /* Supporting Files */,
+				DAA547B9193A8D6300F743AD /* BeeMenuScene.h */,
+				DAA547BA193A8D6300F743AD /* BeeMenuScene.m */,
+				DAA547BC193B7A5700F743AD /* BeeScratchScene.h */,
+				DAA547BD193B7A5700F743AD /* BeeScratchScene.m */,
+				DAFB9B4419438EDA00E06E8D /* BeeBoid.h */,
+				DAFB9B4519438EDA00E06E8D /* BeeBoid.m */,
 			);
 			path = beeproto;
 			sourceTree = "<group>";
@@ -250,13 +289,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA297B0C1937F05E008EB5B0 /* coin7.png in Resources */,
+				DA297B071937F05E008EB5B0 /* coin2.png in Resources */,
 				EFBBFFA41933568E001CCF65 /* InfoPlist.strings in Resources */,
-				EFBBFFDC19335F67001CCF65 /* bee1.gif in Resources */,
-				EFBBFFDD19335F67001CCF65 /* bee2.gif in Resources */,
+				DA297B0D1937F05E008EB5B0 /* coin8.png in Resources */,
 				EFBBFFB71933568E001CCF65 /* Images.xcassets in Resources */,
+				DA297B041937F05E008EB5B0 /* bee1.png in Resources */,
 				EFBBFFE219336CE4001CCF65 /* Skyline.png in Resources */,
 				EFBBFFAD1933568E001CCF65 /* Main.storyboard in Resources */,
+				DA297B0A1937F05E008EB5B0 /* coin5.png in Resources */,
+				DA297B091937F05E008EB5B0 /* coin4.png in Resources */,
 				EFBBFFE119336CE4001CCF65 /* Ground.png in Resources */,
+				DA297B061937F05E008EB5B0 /* coin1.png in Resources */,
+				DA297B0B1937F05E008EB5B0 /* coin6.png in Resources */,
+				DA297B081937F05E008EB5B0 /* coin3.png in Resources */,
+				DA297B051937F05E008EB5B0 /* bee2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,10 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFB9B4619438EDA00E06E8D /* BeeBoid.m in Sources */,
+				DAA547BE193B7A5700F743AD /* BeeScratchScene.m in Sources */,
 				EFBBFFA61933568E001CCF65 /* main.m in Sources */,
 				EFBBFFB01933568E001CCF65 /* BeeViewController.m in Sources */,
 				EFBBFFAA1933568E001CCF65 /* BeeAppDelegate.m in Sources */,
 				EFBBFFB31933568E001CCF65 /* BeeMyScene.m in Sources */,
+				DAA547BB193A8D6300F743AD /* BeeMenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +537,7 @@
 				EFBBFFCF1933568E001CCF65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EFBBFFD01933568E001CCF65 /* Build configuration list for PBXNativeTarget "beeprotoTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +546,7 @@
 				EFBBFFD21933568E001CCF65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -62,7 +62,7 @@ static const uint32_t swarmCategory = 1 << 4;
 }
 
 -(void)setupSceneAttributes {
-    self.physicsWorld.gravity = CGVectorMake(0.0, -9.8);
+    self.physicsWorld.gravity = CGVectorMake(0.0, -3.0);
     self.physicsWorld.contactDelegate = self;
 
     self.backgroundColor = [SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.0 alpha:1.0];
@@ -211,7 +211,7 @@ static const uint32_t swarmCategory = 1 << 4;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    _beeVelocity = 0.5f;
+    _beeVelocity = 0.1f;
     _beeShouldFly = YES;
 }
 
@@ -237,9 +237,8 @@ static const uint32_t swarmCategory = 1 << 4;
 //            [bee.physicsBody applyImpulse:CGVectorMake(0, _beeVelocity)];
 //        }
         [_bee.physicsBody applyImpulse:CGVectorMake(0, _beeVelocity)];
-        _beeVelocity += 0.005f;
-        if (_beeVelocity > 1.5f) {
-            _beeVelocity = 1.5f;
+        if (_beeVelocity < 0.3f) {
+            _beeVelocity += 0.001f;
         }
 //        if (_beeVelocity < 10.0f) {
 //            _beeVelocity += 1.01f;
