@@ -39,9 +39,6 @@ static const uint32_t swarmCategory = 1 << 4;
     if (self = [super initWithSize:size]) {
         [self setupSceneAttributes];
 
-        _moving = [SKNode node];
-        [self addChild:_moving];
-
         [self createBee];
         [self addChild:_bee];
 
